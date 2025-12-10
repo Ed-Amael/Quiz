@@ -1,0 +1,32 @@
+{
+  "name": "code-correction-quiz",
+  "version": "1.0.0",
+  "description": "A full-stack code correction quiz application",
+  "main": "index.js",
+  "scripts": {
+    "dev:all": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "build:all": "npm run build:client && npm run build:server",
+    "build:client": "cd client && npm run build",
+    "build:server": "cd server && npm run build",
+    "start:all": "concurrently \"npm run start:client\" \"npm run start:server\"",
+    "start:client": "cd client && npm run preview",
+    "start:server": "cd server && npm start",
+    "install:all": "npm install && cd client && npm install && cd ../server && npm install",
+    "setup": "npm run install:all && cd server && npx prisma generate && npx prisma db push && npx prisma db seed"
+  },
+  "keywords": [
+    "quiz",
+    "code-correction",
+    "react",
+    "express",
+    "typescript",
+    "prisma"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
